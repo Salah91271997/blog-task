@@ -1,0 +1,10 @@
+<!-- shared/components/error-message/error-message.component.html -->
+<div class="error-container">
+  <div class="error-icon">
+    <i class="pi pi-exclamation-triangle"></i>
+  </div>
+  <div class="error-message">{{ message }}</div>
+  <div class="error-actions" *ngIf="showRetry">
+    <button class="retry-button" (click)="onRetry()">Retry</button>
+  </div>
+</div>
