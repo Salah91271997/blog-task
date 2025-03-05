@@ -1,0 +1,89 @@
+// Color Variables
+$primary-color: #b49164;
+$secondary-color: #fbf5ea;
+$black: #212529;
+$grey: #737373;
+$light-grey: #b3b3b3;
+$disabled-grey: #f4f4f4;
+$white: #ffffff;
+
+// Border
+$border-color: #e1e1e1;
+$border-color-secondary: #eeeeee;
+
+$border-color-disabled: $disabled-grey;
+
+// Background for buttons
+// primary
+$primary-bg-btn: #b49164;
+$hover-bg-btn: #997b55;
+$disabled-bg-btn: $disabled-grey;
+
+// secondary
+$secondary-bg-btn: #fbf5ea;
+
+// third
+$third-bg-btn: $secondary-color;
+
+//Error color
+$error-color: #df1414;
+
+// color classes
+.primary {
+  color: $primary-color;
+}
+.secondary {
+  color: $secondary-color;
+}
+.black {
+  color: $black;
+}
+.grey {
+  color: $grey;
+}
+.light-grey {
+  color: $light-grey;
+}
+.white {
+  color: $white;
+}
+
+// background classes
+.bg-primary {
+  background-color: $primary-color;
+}
+.bg-secondary {
+  background-color: $secondary-color;
+}
+.bg-black {
+  background-color: $black;
+}
+.bg-grey {
+  background-color: $grey;
+}
+.bg-light-grey {
+  background-color: $light-grey;
+}
+.bg-white {
+  background-color: $white;
+}
+
+// error classes
+.error {
+  color: $error-color;
+}
+
+//fonts
+.fw-400 {
+  font-weight: 400;
+  font-family: "Alexandria";
+  font-size: 14px;
+}
+
+// status
+$status-colors: (
+  "active": $primary-color,
+  "inactive": $grey,
+  "pending": $light-grey,
+  "approved": $secondary-color,
+);

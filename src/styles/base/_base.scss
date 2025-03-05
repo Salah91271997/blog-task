@@ -1,0 +1,130 @@
+@use "sass:math";
+@import "../abstract/colors";
+@import "../base/typography";
+@import "../abstract/variables";
+@import "../abstract/mixins";
+@import "../abstract/functions";
+/* Some Resets */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+p {
+  color: $grey;
+  font-family: Alexandria;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none !important;
+}
+
+ul {
+  margin: 0 !important;
+  padding: 0 ;
+  list-style: none;
+}
+a {
+  color: $primary-color;
+  font-family: Alexandria;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 16px; /* 114.286% */
+}
+
+/* HTML Styles Start Here */
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: $alex-regular;
+  font-size: $base-font-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: $black;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  @include responsive-font-size(
+    (
+      xs: 12px,
+      sm: 12px,
+      md: 13px,
+      lg: 14px,
+      xl: 14.5px,
+      xxl: 15px,
+      xxxl: 16px,
+    )
+  );
+}
+
+[dir="rtl"] {
+  direction: rtl;
+
+  .text-left {
+    text-align: right !important;
+  }
+
+  .text-right {
+    text-align: left !important;
+  }
+}
+
+[dir="ltr"] {
+  direction: ltr;
+
+  .text-left {
+    text-align: left !important;
+  }
+
+  .text-right {
+    text-align: right !important;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  transition: 0.5s;
+  background-color: $primary-color;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  transition: 0.5s;
+  background-color: $hover-bg-btn;
+}
+
+//container
+.rawda-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}

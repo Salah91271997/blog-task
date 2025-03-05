@@ -1,0 +1,154 @@
+// load fonts from assets/fonts
+@import "../abstract/mixins";
+@import "../abstract/functions";
+@font-face {
+  font-family: "alexandria-bold";
+  src: url("../../assets/fonts/static/Alexandria-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+// extra bold
+@font-face {
+  font-family: "alexandria-extrabold";
+  src: url("../../assets/fonts/static/Alexandria-ExtraBold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+// light
+@font-face {
+  font-family: "alexandria-light";
+  src: url("../../assets/fonts/static/Alexandria-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// extra light
+@font-face {
+  font-family: "alexandria-extralight";
+  src: url("../../assets/fonts/static/Alexandria-ExtraLight.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// medium
+@font-face {
+  font-family: "alexandria-medium";
+  src: url("../../assets/fonts/static/Alexandria-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// regular
+@font-face {
+  font-family: "alexandria";
+  src: url("../../assets/fonts/static/Alexandria-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// semi bold
+@font-face {
+  font-family: "alexandria-semibold";
+  src: url("../../assets/fonts/static/Alexandria-SemiBold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+// thin
+@font-face {
+  font-family: "alexandria-thin";
+  src: url("../../assets/fonts/static/Alexandria-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$alex-bold: "alexandria-bold", sans-serif;
+$alex-extrabold: "alexandria-extrabold", sans-serif;
+$alex-light: "alexandria-light", sans-serif;
+$alex-extralight: "alexandria-extralight", sans-serif;
+$alex-medium: "alexandria-medium", sans-serif;
+$alex-regular: "alexandria", sans-serif;
+$alex-semibold: "alexandria-semibold", sans-serif;
+$alex-thin: "alexandria-thin", sans-serif;
+
+// typography
+h1 {
+  font-weight: 600;
+  line-height: normal;
+  color: $black;
+  color: $black;
+  @include responsive-font-size(
+    (
+      xs: rem(18),
+      sm: rem(20),
+      md: rem(22),
+      lg: rem(24),
+      xl: rem(26),
+      xxl: rem(28),
+      xxxl: rem(32),
+    )
+  );
+}
+h2 {
+  font-family: $alex-semibold;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: $black;
+  @include responsive-font-size(
+    (
+      xs: rem(14),
+      sm: rem(16),
+      md: rem(18),
+      lg: rem(20),
+      xl: rem(22),
+      xxl: rem(24),
+      xxxl: rem(28),
+    )
+  );
+}
+
+h3 {
+  font-family: $alex-semibold;
+  color: $black;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  @include responsive-font-size(
+    (
+      xs: rem(12),
+      sm: rem(15),
+      md: rem(16),
+      lg: rem(17),
+      xl: rem(20),
+      xxl: rem(22),
+      xxxl: rem(24),
+    )
+  );
+}
+h4 {
+  font-family: $alex-semibold;
+  color: $black;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  @include responsive-font-size(
+    (
+      xs: rem(10),
+      sm: rem(11),
+      md: rem(12),
+      lg: rem(14),
+      xl: rem(15),
+      xxl: rem(16),
+      xxxl: rem(18),
+    )
+  );
+}
+
+// Base font size
+$base-font-size: 16px;

@@ -1,0 +1,142 @@
+@import "variables";
+
+@mixin breakpoint($breakpoint, $direction: min) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-values: map-get($breakpoints, $breakpoint);
+    $breakpoint-min: map-get($breakpoint-values, min);
+    $breakpoint-max: map-get($breakpoint-values, max);
+
+    @if $direction == min {
+      @media (min-width: $breakpoint-min) {
+        @content;
+      }
+    } @else {
+      @media (max-width: $breakpoint-max) {
+        @content;
+      }
+    }
+  } @else {
+    @if $direction == min {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin responsive-font-size($font-sizes) {
+  @each $breakpoint, $size in $font-sizes {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $min: map-get(map-get($breakpoints, $breakpoint), min);
+      $max: map-get(map-get($breakpoints, $breakpoint), max);
+
+      @media screen and (min-width: $min) and (max-width: $max) {
+        font-size: $size;
+      }
+    }
+  }
+}
+
+@mixin text-body {
+  font-family: $alex-regular;
+  color: $black;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @include responsive-font-size(
+    (
+      sm: rem(12),
+      xxxl: rem(14),
+    )
+  );
+}
+@mixin responsive-spacing($property, $value) {
+  @each $breakpoint, $value in $value {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $min: map-get(map-get($breakpoints, $breakpoint), min);
+      $max: map-get(map-get($breakpoints, $breakpoint), max);
+      @media screen and (min-width: $min) {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+// flexbox mixin
+// center the content horizontally and vertically
+@mixin center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// start the content horizontally and center vertically
+@mixin start-center {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+// end the content horizontally and center vertically
+@mixin end-center {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+// center the content horizontally and start vertically
+@mixin center-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+// space between the content and vertical center
+@mixin space-between-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// indline the content horizontally and center vertically
+@mixin inline-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+// direction column and flex start
+@mixin column-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+// direction column and flex end
+@mixin column-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+// direction column and flex center
+@mixin column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// section inline start
+@mixin section-inline-start {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+//error message mixin
+@mixin error-message {
+  border-color: $error-color !important;
+  &::placeholder {
+    color: $error-color;
+  }
+}

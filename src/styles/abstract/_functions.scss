@@ -1,0 +1,28 @@
+// create a function to transform px to rem
+@use "sass:math";
+@import "./variables";
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+@function responsive-spacing($value) {
+  $percentage: 100%;
+  $margins: ();
+
+  @each $breakpoint, $range in $breakpoints {
+    $min: map-get($range, min);
+    $max: map-get($range, max);
+
+    $percentage: $percentage - 10%;
+    $margins: map-merge(
+      $margins,
+      (
+        $breakpoint: (
+          $value * $percentage,
+        ),
+      )
+    );
+  }
+
+  @return $margins;
+}

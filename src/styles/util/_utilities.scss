@@ -1,0 +1,78 @@
+/*
+  This file is used to store utility classes that can be used across the application.
+  For example, you can create a class that sets the border color and radius for an element.
+  You can then use this class in any component without having to redefine the styles.
+  
+*/
+
+// borders
+.primary-border {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+}
+// label
+.form-label {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Alexandria;
+  color: $black;
+  margin-bottom: 0;
+}
+.alex {
+  font-family: Alexandria;
+}
+.form-sub-label {
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-family: Alexandria;
+  color: $black;
+  margin-bottom: 0;
+}
+
+/*----------------------------------*/
+// change direction classes
+// primeng password icons
+.pn-password-rtl {
+  .pn-password {
+    .p-icon-wrapper {
+      right: unset;
+      left: 0.75rem;
+    }
+  }
+}
+// prineng panalMenu icon
+.g-p-panalMenu-rtl {
+  .p-panelmenu-panel {
+    .p-panelmenu-header-content {
+      .p-panelmenu-header-action {
+        .p-icon-wrapper {
+          svg {
+            margin: 0;
+            transform: rotateY(180deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+// primeng tabble text align
+.g-p-tabl-rtl {
+  .p-datatable-wrapper {
+    .p-datatable-thead {
+      tr {
+        th {
+          text-align: right;
+        }
+      }
+    }
+    .p-datatable-tbody {
+      tr {
+        td {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+/*----------------------------------*/
