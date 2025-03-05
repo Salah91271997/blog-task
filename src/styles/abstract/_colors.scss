@@ -1,89 +1,86 @@
 // Color Variables
-$primary-color: #b49164;
-$secondary-color: #fbf5ea;
-$black: #212529;
-$grey: #737373;
-$light-grey: #b3b3b3;
-$disabled-grey: #f4f4f4;
+$primary-purple: #5d3fd3;
+$primary-purple-light: #ddd6f7;
+$primary-purple-lighter: #f4f0ff;
+$text-primary: #2a2a2a;
+$text-secondary: #6b6b6b;
 $white: #ffffff;
+$border-color: #e8e8e8;
+$tag-bg: #f1eeff;
 
-// Border
-$border-color: #e1e1e1;
-$border-color-secondary: #eeeeee;
+// Card and Shadow
+$card-bg: $white;
+$card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+$card-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-$border-color-disabled: $disabled-grey;
+// Button Colors
+$button-primary: $primary-purple;
+$button-hover: darken($primary-purple, 5%);
+$button-text: $white;
+$button-border: $primary-purple;
 
-// Background for buttons
-// primary
-$primary-bg-btn: #b49164;
-$hover-bg-btn: #997b55;
-$disabled-bg-btn: $disabled-grey;
+// Search input
+$input-bg: $white;
+$input-border: $border-color;
+$input-text: $text-primary;
+$input-placeholder: $text-secondary;
 
-// secondary
-$secondary-bg-btn: #fbf5ea;
-
-// third
-$third-bg-btn: $secondary-color;
-
-//Error color
-$error-color: #df1414;
-
-// color classes
-.primary {
-  color: $primary-color;
-}
-.secondary {
-  color: $secondary-color;
-}
-.black {
-  color: $black;
-}
-.grey {
-  color: $grey;
-}
-.light-grey {
-  color: $light-grey;
-}
-.white {
-  color: $white;
+// Color Classes
+.text-primary {
+  color: $text-primary;
 }
 
-// background classes
-.bg-primary {
-  background-color: $primary-color;
+.text-secondary {
+  color: $text-secondary;
 }
-.bg-secondary {
-  background-color: $secondary-color;
+
+.text-purple {
+  color: $primary-purple;
 }
-.bg-black {
-  background-color: $black;
+
+.bg-purple {
+  background-color: $primary-purple;
 }
-.bg-grey {
-  background-color: $grey;
+
+.bg-purple-light {
+  background-color: $primary-purple-light;
 }
-.bg-light-grey {
-  background-color: $light-grey;
+
+.bg-purple-lighter {
+  background-color: $primary-purple-lighter;
 }
+
 .bg-white {
   background-color: $white;
 }
 
-// error classes
-.error {
-  color: $error-color;
+.tag-purple {
+  color: $primary-purple;
+  background-color: $tag-bg;
 }
 
-//fonts
-.fw-400 {
-  font-weight: 400;
-  font-family: "Alexandria";
-  font-size: 14px;
+// Gradient background seen in the first image
+.bg-purple-gradient {
+  background: linear-gradient(
+    135deg,
+    $primary-purple-light 0%,
+    $primary-purple-lighter 100%
+  );
 }
 
-// status
-$status-colors: (
-  "active": $primary-color,
-  "inactive": $grey,
-  "pending": $light-grey,
-  "approved": $secondary-color,
-);
+// Hover effects
+.hover-shadow {
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: $card-hover-shadow;
+  }
+}
+
+.hover-purple {
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary-purple;
+  }
+}
