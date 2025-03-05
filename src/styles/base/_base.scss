@@ -1,6 +1,5 @@
 @use "sass:math";
 @import "../abstract/colors";
-@import "../base/typography";
 @import "../abstract/variables";
 @import "../abstract/mixins";
 @import "../abstract/functions";
@@ -16,8 +15,7 @@ p {
   padding: 0;
 }
 p {
-  color: $grey;
-  font-family: Alexandria;
+  color: $text-primary;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -33,12 +31,11 @@ a:active {
 
 ul {
   margin: 0 !important;
-  padding: 0 ;
+  padding: 0;
   list-style: none;
 }
 a {
-  color: $primary-color;
-  font-family: Alexandria;
+  color: $primary-purple;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -52,8 +49,7 @@ html {
   height: 100%;
   width: 100%;
   margin: 0;
-  font-family: $alex-regular;
-  font-size: $base-font-size;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -105,20 +101,20 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: $grey;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   transition: 0.5s;
-  background-color: $primary-color;
+  background-color: $primary-purple;
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   transition: 0.5s;
-  background-color: $hover-bg-btn;
+  background-color: $button-hover;
 }
 
 //container

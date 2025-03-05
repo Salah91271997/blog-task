@@ -1,0 +1,118 @@
+<div class="blog">
+  <div class="blog__header">
+    <div class="blog__header-title">
+      <div class="blog__subtitle">
+        <p>Our blog</p>
+      </div>
+      <h1 class="blog__title">Resources and insights</h1>
+      <p class="blog__description">
+        The latest industry news, interviews, technologies, and resources.
+      </p>
+    </div>
+
+    <div class="blog__search">
+      <div class="blog__search-input-wrapper">
+        <i class="blog__search-icon pi pi-search"></i>
+        <input
+          type="text"
+          class="blog__search-input"
+          placeholder="Search"
+          [formControl]="searchControl"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading state -->
+  <div class="blog__loading" *ngIf="blogFacade.loading$ | async">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+
+  <!-- Error state -->
+  <div class="blog__error" *ngIf="blogFacade.error$ | async as error">
+    <app-error-message [message]="error" (retry)="retryLoading()">
+    </app-error-message>
+  </div>
+
+  <!-- Empty state -->
+  <div
+    class="blog__empty"
+    *ngIf="
+      (blogFacade.blogPosts$ | async)?.length === 0 &&
+      !(blogFacade.loading$ | async) &&
+      !(blogFacade.error$ | async)
+    "
+  >
+    <app-empty-state
+      title="No blog posts found"
+      message="There are no blog posts available at this moment."
+    >
+    </app-empty-state>
+  </div>
+
+  <!-- Blog posts grid -->
+  <div
+    class="blog__grid"
+    *ngIf="
+      (blogFacade.blogPosts$ | async)?.length !== 0 &&
+      !(blogFacade.loading$ | async)
+    "
+  >
+    <app-blog-item
+      *ngFor="let post of blogFacade.blogPosts$ | async"
+      [post]="post"
+    >
+    </app-blog-item>
+  </div>
+
+  <!-- Pagination -->
+  <ng-container *ngIf="blogFacade.pagination$ | async as pagination">
+    <div
+      class="blog__pagination"
+      *ngIf="
+        (blogFacade.blogPosts$ | async)?.length !== 0 &&
+        !(blogFacade.loading$ | async)
+      "
+    >
+      <div class="blog__pagination-controls">
+        <button
+          class="blog__pagination-button"
+          [disabled]="pagination.currentPage === 1"
+          (click)="onPageChange(pagination.currentPage - 1)"
+        >
+          <i class="pi pi-chevron-left"></i>
+        </button>
+
+        <button
+          *ngFor="let pageNum of blogFacade.getPageNumbers()"
+          class="blog__pagination-button"
+          [class.blog__pagination-button--active]="
+            pageNum === pagination.currentPage
+          "
+          (click)="onPageChange(pageNum)"
+        >
+          {{ pageNum }}
+        </button>
+
+        <button
+          class="blog__pagination-button"
+          [disabled]="pagination.currentPage === pagination.totalPages"
+          (click)="onPageChange(pagination.currentPage + 1)"
+        >
+          <i class="pi pi-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="blog__pagination-action">
+        <button
+          class="blog__load-more-button"
+          [disabled]="pagination.currentPage === pagination.totalPages"
+          (click)="onPageChange(pagination.currentPage + 1)"
+        >
+          <i class="pi pi-download"></i>
+          Load more
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,31 @@
+<div class="blog-item" (click)="navigateToBlogPost()">
+  <div class="blog-item__image-container">
+    <img class="blog-item__image" [src]="post.coverImage" [alt]="post.title" />
+  </div>
+
+  <div class="blog-item__content">
+    <div class="blog-item__category" *ngIf="post.category">
+      {{ post.category }}
+    </div>
+
+    <h2 class="blog-item__title">
+      {{ post.title }}
+      <i class="blog-item__arrow pi pi-arrow-up-right"></i>
+    </h2>
+
+    <p class="blog-item__description">{{ post.description }}</p>
+
+    <div class="blog-item__footer">
+      <div class="blog-item__author">
+        <img
+          class="blog-item__author-image"
+          [src]="post.author.profileImage"
+          [alt]="post.author.name"
+        />
+        <span class="blog-item__author-name">{{ post.author.name }}</span>
+      </div>
+
+      <div class="blog-item__date">{{ post.publishDate }}</div>
+    </div>
+  </div>
+</div>

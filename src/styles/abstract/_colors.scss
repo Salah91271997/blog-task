@@ -1,10 +1,13 @@
 // Color Variables
-$primary-purple: #5d3fd3;
-$primary-purple-light: #ddd6f7;
-$primary-purple-lighter: #f4f0ff;
+$primary-purple: #413272;
+$primary-purple-light: #6941c6;
+$primary-purple-lighter: #f9f5ff;
+$primary-purple-bg: #f3ebff;
 $text-primary: #2a2a2a;
 $text-secondary: #6b6b6b;
 $white: #ffffff;
+$black: #000000;
+$grey: #f5f5f5;
 $border-color: #e8e8e8;
 $tag-bg: #f1eeff;
 
@@ -24,6 +27,9 @@ $input-bg: $white;
 $input-border: $border-color;
 $input-text: $text-primary;
 $input-placeholder: $text-secondary;
+
+//error-color
+$error-color: #ff4d4f;
 
 // Color Classes
 .text-primary {

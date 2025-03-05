@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './interceptors/error-handling-interceptor';
 import { MessageService } from 'primeng/api';
-
 @NgModule({
   declarations: [],
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   providers: [
     MessageService,
     {

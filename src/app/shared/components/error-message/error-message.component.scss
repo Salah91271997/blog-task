@@ -1,43 +1,53 @@
-/* shared/components/error-message/error-message.component.scss */
-.error-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  text-align: center;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  margin: 1rem 0;
-}
-
-.error-icon {
-  font-size: 3rem;
-  color: #dc3545;
-  margin-bottom: 1rem;
-}
+@import "../../../../styles/abstract/colors";
+@import "../../../../styles/abstract/variables";
+@import "../../../../styles/abstract/mixins";
+@import "../../../../styles/abstract/functions";
 
 .error-message {
-  color: #495057;
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
+  @include column-center;
+  padding: rem(32);
+  text-align: center;
+  background-color: $white;
+  border-radius: rem(8);
+  max-width: rem(400);
+  margin: 0 auto;
 
-.error-actions {
-  margin-top: 1rem;
-}
+  &__icon {
+    font-size: rem(40);
+    color: $error-color;
+    margin-bottom: rem(16);
+  }
 
-.retry-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.2s;
+  &__text {
+    color: $text-secondary;
+    font-size: rem(16);
+    margin-bottom: rem(24);
+    line-height: 1.5;
+  }
 
-  &:hover {
-    background-color: #0069d9;
+  &__actions {
+    margin-top: rem(8);
+  }
+
+  &__retry-button {
+    @include inline-center;
+    gap: rem(8);
+    background-color: $primary-purple;
+    color: $white;
+    border: none;
+    border-radius: rem(4);
+    padding: rem(10) rem(24);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: rem(14);
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+
+    .pi {
+      font-size: rem(14);
+    }
   }
 }
