@@ -122,3 +122,7 @@ Parameters:
 - **Pagination**: Limits the number of items loaded at once
 - **Responsive Images**: Proper handling of image sizes for different devices
 - **Debounced Search**: Prevents excessive API calls during searching
+
+## Live Demo
+
+- https://fantastic-pony-9458f9.netlify.app/blog
