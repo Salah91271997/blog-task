@@ -1,27 +1,124 @@
-# BlogApp
+# Blog Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+A modern blog application built with Angular that integrates with the DEV.to API to display and manage blog posts.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Building for Production](#building-for-production)
+- [API Reference](#api-reference)
+- [Extending the Application](#extending-the-application)
+  - [Adding New Features](#adding-new-features)
+  - [Styling Customization](#styling-customization)
+- [Troubleshooting](#troubleshooting)
+  - [Common Issues](#common-issues)
+  - [Debug Steps](#debug-steps)
+- [Performance Considerations](#performance-considerations)
 
-## Code scaffolding
+## Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This application provides a clean, modern interface for browsing and reading blog posts from DEV.to. It demonstrates best practices for Angular development including modular architecture, responsive design, and efficient API integration.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Browse latest articles from DEV.to
+- Search articles by tags
+- Responsive layout for all devices
+- Lazy loading of modules for improved performance
+- Pagination for efficient data loading
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
 
-## Running end-to-end tests
+- Node.js (v14+)
+- npm (v6+) or yarn
+- Angular CLI (v12+)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Installation
 
-## Further help
+1. Clone the repository:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+git clone https://github.com/yourusername/dev-to-blog.git
+cd dev-to-blog
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the development server:
+
+```bash
+ng serve
+```
+
+4. Open your browser and navigate to:
+
+```
+http://localhost:4200/
+```
+
+## Building for Production
+
+```bash
+ng build --prod
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+## API Reference
+
+This application uses the DEV.to API:
+
+**GET /api/articles**: Fetch blog posts
+
+Parameters:
+
+- `page`: Page number (default: 1)
+- `per_page`: Items per page (default: 9)
+- `tag`: Filter by tag (used for search)
+
+## Extending the Application
+
+### Adding New Features
+
+- **New Components**: Add to the blog module or create a new feature module
+- **New Services**: Add to the blog module or core module depending on scope
+- **Routing**: Update blog-routing.module.ts for new blog pages
+
+### Styling Customization
+
+- Update colors in `styles/abstract/_colors.scss`
+- Modify typography settings in `styles/base/_typography.scss`
+- Adjust spacing variables in `styles/abstract/_variables.scss`
+
+## Troubleshooting
+
+### Common Issues
+
+- **API Rate Limiting**: DEV.to API has rate limits. If you see errors, you might be hitting these limits.
+- **CORS Issues**: If experiencing CORS errors, consider using a proxy in development.
+- **Module Not Found Errors**: Check import paths and ensure modules are properly exported.
+
+### Debug Steps
+
+1. Check browser console for errors
+2. Verify network requests in dev tools
+3. Check for any console logs from error interceptors
+
+## Performance Considerations
+
+- **Lazy Loading**: Feature modules are lazy-loaded for faster initial load
+- **Pagination**: Limits the number of items loaded at once
+- **Responsive Images**: Proper handling of image sizes for different devices
+- **Debounced Search**: Prevents excessive API calls during searching
